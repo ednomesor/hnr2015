@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Revealing networks in private writings : the case of Léonard Michon's historical Journal</title>
+
+		<meta name="description" content="HNR 2016 - Lisbon - 18 septembre 2015">
+		<meta name="author" content="Rosemonde LETRICOT">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" type="text/css" href="css/css-sigma.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+				<section>
+					<h3>Revealing networks in private writings : the case of Léonard Michon's historical Journal</h3>
+					<p>Rosemonde LETRICOT (LARHRA UMR5190, University Lyon 3, France)<br><br>
+						<small>HNR 2016 - Lisbon - 18 septembre 2015</small>
+					</p>
+					<aside class="notes">
+					  Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+					</br></br>
+					<img width="91" height="65" src="img/logo_larhra.png">
+					<img width="243" height="66" src="img/logo_RA.png">
+				</section>
+				<section>
+				<h3>PhD in modern history and Digital Humanities</h3>
+				<ul>
+				<li>Critical edition of L. Michon's Mémoires, available on a dedicated website</li>
+				<li>Data analysis on political and personnal networks</li>
+				<li>Open and interoparable sets of data</li></br></br>
+				</ul>
+				<h3>This presentation</h3>
+					<table>
+						  <td>	    
+						    <ul>
+						      <li>Methodology applied for text analysis (XML/TEI, Database)</li>
+						      <li>Collecting historical informations and linking them to the text edition</li>
+						      <li>First results</li>
+						   </ul>
+						  </td>
+					</table>
+				</section>
+				</section>
+
+				<!-- PRESENTATION DE LA SOURCE -->
+				<section>
+					<section>
+						<h2>L. Michon's Memoires (Historical Journal of Lyon)</h2>
+					</section>
+					<section data-background="img/Journal_deb1715bis.jpg" data-background-transition="slide">
+						<p>Journal de Lyon </br> ou Mémoires historiques et politiques de ce qui s'est passé de plus remarquable dans la ville de Lyon et dans la province depuis le commencement du XVIIIe jusqu'à présent</font></p>	
+					</section>
+					<section>
+						<h3>Historical Journal of Lyon</h3>
+						<table>
+						  <td>	    
+						    <ul>
+						      <li>7 volumes, curated today by the Musées Gadagne - Lyon</li>
+						      <li>Was written between 1715 and 1744</li>
+						      <li>Daily life of local bourgeoisie (social, political, cultural aspects)</li>
+						   </ul>
+						  </td>
+						</table>
+					</section>
+					<section>
+						<h3>The author</h3>
+						<table>
+						  <td>	    
+						    <ul>
+						      <li>Léonard Michon (1675-1746)</li>
+						      <li>Lawyer at the Bureau des finances of Lyon (1700-1746)</li>
+						      <li>Administrator of a city hospital (1714-1715)</li>
+						      <li>Member of the city council (1721-1722)</li>
+						   </ul>
+						  </td>
+						  </table>
+						<img width="280" height="354" src="img/Michon.png">
+					</section>
+					<section data-background="img/Lyon_noircie.jpg" data-background-transition="slide">
+						<h3>Diversity of thematics</h3>
+						<h4>Mariage, birth, funerals, sales of offices, etc.</h4>
+						<blockquote>
+						&ldquo;Du 20e dudit mois, mariage du sieur Pauliny, procureur du Roy en l’élection de Lyon, avec une demoiselle Cusset, soeur de Jean Baptiste Cusset, marchand de soye à présent trésorier des deniers de l’hôpital&rdquo;</br>
+						</blockquote>
+						<p align="right">20 août 1723</p>
+						<h4>A unique source for prosopographical research</h4>
+					</section>
+					<section data-background="img/Lyon_noircie.jpg" data-background-transition="slide">
+					<h3>Diversity of thematics</h3>
+						<h4>National events</h4>
+						<blockquote>
+						&ldquo;Pour revenir à cette maudite peste, il ne se peut pas faire absolument que les nouvelles qu'on en débite soienttout à fait fausses. Mais aussi, je ne saurois me persuader qu'elle ne soit à présent très affaiblie & d'un caractère fort différent de celle qui a ravagé Marseille&rdquo;</br>
+						</blockquote>
+						<p align="right">septembre 1721</p>
+						<blockquote>
+						&ldquo;Le dimanche 5e du présent, entre 4 et 5 heures de l’après-midy, arriva icy la nouvelle de la mort du duc d'Orléans&rdquo;</br>
+						</blockquote>
+						<p align="right">5 décembre 1723</p>
+					</section>
+				</section>
+				<!-- METHODO-->
+				<section>
+					<section>
+						<h2>Methodology</h2>
+					</section>
+					<section data-background="img/the_ring_dark.jpg" data-background-transition="slide">
+						<h3>XML/TEI : one format to describe them all</h3>
+						<ul>
+						    <li>Text Encoding Initiative : develops and maintains a standard for the representation of texts in digital form (www.tei-c.org)</li>
+							<li>Since 1994, XML/TEI is used by scholars, museum, publishers… for research and preservation of texts</li>
+						</ul>	
+					</section>
+					<section>
+					<img width="900" height="800" src="img/ex_tei.png">
+					</section>
+					<section>
+						   <ul>
+						      <li>XML Files (one per year) stored on an eXist server, readable on a dedicated website http://journal-michon.symogih.org/works/home.html (prototype version)</li>
+						      <li>TEI schema to describe structure (paragraphe, division) and elements (dates, named entities)</li>
+						   </ul>
+					</section>
+					<section data-background="img/computer_room_dark.jpg" data-background-transition="slide">
+						<h3>Collect and analysis of historical informations</h3>
+						<table>
+						  <td>	    
+						    <ul>
+						      <li>Using SyMoGIH method</li>
+						      <li>PostgreSQL Database : collaborative and accumulative system</li>
+						   </ul>
+						  </td>
+						</table>
+					</section>
+					<section>
+						<h3>Linking data and XML/TEI</h3>
+						<img width="900" height="800" src="img/ex_tei.png">	
+					</section>
+					<section>
+						<h3>Linking data and XML/TEI</h3>
+						<img width="900" height="800" src="img/symogih.png">
+						<p><a href="http://symogih.org/?q=actor-record/47687">http://symogih.org/?q=actor-record/47687</a></p>	
+					</section>
+					<section>
+						<h3>Linking data and XML/TEI</h3>
+						<img width="900" height="800" src="img/xmlportal.png">
+						<p><a href="http://journal-michon.symogih.org/works/home.html">http://journal-michon.symogih.org/works/home.html</a></p>	
+					</section>
+				</section>
+				<!-- RESULTATS et DISCUSSIONS-->
+				<section>
+					<section>
+					  <h2>Networks, finally !</h2>
+					</section>
+					<section>
+					<h3>Institutional network</h3>
+					<img width="800" height="654" src="img/g_test_redif.jpeg">
+					</section>
+					<section>
+						<h3>Linking data and XML/TEI</h3>
+						<img width="900" height="800" src="img/ex_tei.png">	
+					</section>
+					<section>
+					<h3>Family and institutional links</h3>
+					<img src="img/reseau_distance3.png">
+					</section>
+					<section>
+					<h2>Pan !!!</h2>
+						<div class="sigma-sample sigma-container" id="sigma-1"></div>
+					</section>
+				</section>
+				<!-- CONCLUSION -->
+				<section data-background="img/Bridges_Question.jpg" data-background-transition="slide">
+				<h2>Thank you for your attention</h2>
+				</section>
+			</div>
+		</div>
+		
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<!-- SIGMA IMPORTS -->
+		<script src="src/sigma.core.js"></script>
+		<script src="src/conrad.js"></script>
+		<script src="src/utils/sigma.utils.js"></script>
+		<script src="src/utils/sigma.polyfills.js"></script>
+		<script src="src/sigma.settings.js"></script>
+		<script src="src/classes/sigma.classes.dispatcher.js"></script>
+		<script src="src/classes/sigma.classes.configurable.js"></script>
+		<script src="src/classes/sigma.classes.graph.js"></script>
+		<script src="src/classes/sigma.classes.camera.js"></script>
+		<script src="src/classes/sigma.classes.quad.js"></script>
+		<script src="src/classes/sigma.classes.edgequad.js"></script>
+		<script src="src/captors/sigma.captors.mouse.js"></script>
+		<script src="src/captors/sigma.captors.touch.js"></script>
+		<script src="src/renderers/sigma.renderers.canvas.js"></script>
+		<script src="src/renderers/sigma.renderers.webgl.js"></script>
+		<script src="src/renderers/sigma.renderers.svg.js"></script>
+		<script src="src/renderers/sigma.renderers.def.js"></script>
+		<script src="src/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+		<script src="src/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+		<script src="src/renderers/webgl/sigma.webgl.edges.def.js"></script>
+		<script src="src/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+		<script src="src/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.labels.def.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.edges.def.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+		<script src="src/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+		<script src="src/renderers/svg/sigma.svg.utils.js"></script>
+		<script src="src/renderers/svg/sigma.svg.nodes.def.js"></script>
+		<script src="src/renderers/svg/sigma.svg.edges.def.js"></script>
+		<script src="src/renderers/svg/sigma.svg.edges.curve.js"></script>
+		<script src="src/renderers/svg/sigma.svg.labels.def.js"></script>
+		<script src="src/renderers/svg/sigma.svg.hovers.def.js"></script>
+		<script src="src/middlewares/sigma.middlewares.rescale.js"></script>
+		<script src="src/middlewares/sigma.middlewares.copy.js"></script>
+		<script src="src/misc/sigma.misc.animation.js"></script>
+		<script src="src/misc/sigma.misc.bindEvents.js"></script>
+		<script src="src/misc/sigma.misc.bindDOMEvents.js"></script>
+		<script src="src/misc/sigma.misc.drawHovers.js"></script>
+		<!-- END SIGMA IMPORTS -->
+		<script src="plugin/sigma.parsers.gexf/gexf-parser.js"></script>
+		<script src="plugin/sigma.parsers.gexf/sigma.parsers.gexf.js"></script>
+		<script>
+		// Add a method to the graph model that returns an
+		  // object with every neighbors of a node inside:
+		  sigma.classes.graph.addMethod('neighbors', function(nodeId) {
+		    var k,
+		        neighbors = {},
+		        index = this.allNeighborsIndex[nodeId] || {};
+
+		    for (k in index)
+		      neighbors[k] = this.nodesIndex[k];
+
+		    return neighbors;
+		  });
+
+
+		/**
+		 * Here is just a basic example on how to properly display a graph
+		 * exported from Gephi in the GEXF format.
+		 *
+		 * The plugin sigma.parsers.gexf can load and parse the GEXF graph file,
+		 * and instantiate sigma when the graph is received.
+		 *
+		 * The object given as the second parameter is the base of the instance
+		 * configuration object. The plugin will just add the "graph" key to it
+		 * before the instanciation.
+		 */
+
+
+		sigma.parsers.gexf(
+		  'data/hnr2016_network.gexf',
+		  {
+		    container: 'sigma-1'
+		  },
+		  function(s) {
+		      s.graph.nodes().forEach(function(t) {
+		        t.originalLabel = t.title;
+		      });
+		      // We first need to save the original colors of our
+		      // nodes and edges, like this:
+		      s.graph.nodes().forEach(function(n) {
+		        n.originalColor = n.color;
+		      });
+		      s.graph.edges().forEach(function(e) {
+		        e.originalColor = e.color;
+		      });
+
+		      // When a node is clicked, we check for each node
+		      // if it is a neighbor of the clicked one. If not,
+		      // we set its color as grey, and else, it takes its
+		      // original color.
+		      // We do the same for the edges, and we only keep
+		      // edges that have both extremities colored.
+		      s.bind('clickNode', function(e) {
+		        var nodeId = e.data.node.id,
+		            toKeep = s.graph.neighbors(nodeId);
+		        toKeep[nodeId] = e.data.node;
+
+		        s.graph.nodes().forEach(function(n) {
+		          if (toKeep[n.id])
+		            n.color = n.originalColor;
+		          else
+		            n.color = '#eee';
+		        });
+
+		        s.graph.edges().forEach(function(e) {
+		          if (toKeep[e.source] && toKeep[e.target])
+		            e.color = e.originalColor;
+		          else
+		            e.color = '#eee';
+		        });
+
+		        // Since the data has been modified, we need to
+		        // call the refresh method to make the colors
+		        // update effective.
+		        s.refresh();
+		      });
+
+		      // When the stage is clicked, we just color each
+		      // node and edge with its original color.
+		      s.bind('clickStage', function(e) {
+		        s.graph.nodes().forEach(function(n) {
+		          n.color = n.originalColor;
+		        });
+
+		        s.graph.edges().forEach(function(e) {
+		          e.color = e.originalColor;
+		        });
+
+		        // Same as in the previous event:
+		        s.refresh();
+		      });
+		    }
+		);
+
+
+		</script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				math: {
+					// mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'plugin/math/math.js', async: true },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>
